@@ -12,6 +12,8 @@ function filterCarByAvailability(cars) {
         result.push(cars[i]);
     }
   }
+  
+  // tes dlu yekan
 
   // Rubah code ini dengan array hasil filter berdasarkan availablity
   
