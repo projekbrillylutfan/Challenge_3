@@ -11,6 +11,9 @@ function filterCarByAvailability(cars) {
     if (cars[num].available === true) {
         result.push(cars[num]);
     }
+    else {
+      console.log("car is not available");
+    }
   }
   
   // tes dlu yekan
