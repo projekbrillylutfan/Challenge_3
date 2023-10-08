@@ -6,10 +6,10 @@ function filterCarByAvailability(cars) {
   const result = [];
 
   // Tulis code-mu disini
-  for (let i = 0; i < cars.length; i++) {
+  for (let num = 0; num < cars.length; num++) {
     // Periksa apakah mobil memiliki ketersediaan true
-    if (cars[i].available === true) {
-        result.push(cars[i]);
+    if (cars[num].available === true) {
+        result.push(cars[num]);
     }
   }
   
