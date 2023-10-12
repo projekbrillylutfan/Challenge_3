@@ -3,7 +3,7 @@ function sortCarByYearDescendingly(cars) {
   /**
    * pseudo code untuk sorting mobil berdasarkan tahun termuda
    * pertama adalah mengclone array agar menghindari side effect
-   * kedua adalah mengurutkan array berdasarkan tahun termuda menggunakan fungsi bawaan short
+   * kedua adalah mengurutkan array berdasarkan tahun termuda menggunakan fungsi bawaan short atau instead loop (ada dua versi kodingan)
    * ketiga adalah mengembalikan array hasil sorting (array yang sudah di clone)
    * selesai
    */
@@ -25,11 +25,21 @@ function sortCarByYearDescendingly(cars) {
   // return cloneArray;
 
   for (let i = 0; i < result.length - 1; i++) {
+     // Dua loop for bersarang digunakan untuk mengiterasi melalui array result. Loop luar (i) 
+    // digunakan untuk mengontrol berapa kali proses pengurutan diulang, dan loop dalam (j) 
+    // digunakan untuk membandingkan dan menukar elemen-elemen yang diperlukan.
     for (let j = 0; j < result.length - i - 1; j++) {
+      // Pada setiap iterasi dalam loop luar, loop dalam akan membandingkan dua 
+      // elemen berturut-turut (elemen ke-j dan elemen ke-j+1) 
+      // berdasarkan properti year.
       if (result[j].year < result[j + 1].year) {
-        const temp = result[j];
+        // Jika elemen ke-j memiliki nilai year yang lebih besar dari elemen ke-j+1, 
+        // maka elemen-elemen ini akan ditukar. Ini dilakukan dengan menggunakan 
+        // variabel sementara temp untuk menyimpan elemen result[j], 
+        // kemudian result[j] diperbarui dengan result[j+1], dan result[j+1] diperbarui dengan nilai temp.
+        const temporary = result[j];
         result[j] = result[j + 1];
-        result[j + 1] = temp;
+        result[j + 1] = temporary;
       }
     }
   }
